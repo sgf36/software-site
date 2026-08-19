@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software da Spencer Fields</title>
+<meta name="description" content="Software independente desenvolvido no Reino Unido: Easy-Post Desktop para envios com a EasyPost, o seu complemento para telemóvel e Wren para o Apple Maps. Ferramentas simples que fazem bem um único trabalho.">
+<meta name="theme-color" content="#1b2a33">
+
+<!-- An inline mark rather than a file: nothing on this page makes a request to
+     anything, and a favicon is not worth breaking that for. -->
+<link rel="icon" href="data:image/svg+xml,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'&gt;&lt;rect%20width='100'%20height='100'%20rx='22'%20fill='%231b2a33'/&gt;&lt;path%20d='M26%2068V32h13c11%200%2018%207%2018%2018s-7%2018-18%2018z'%20fill='%23e8dcc8'/&gt;&lt;circle%20cx='72'%20cy='62'%20r='7'%20fill='%23c98a3f'/&gt;&lt;/svg&gt;">
+
+<meta property="og:title" content="Software da Spencer Fields">
+<meta property="og:description" content="Software independente desenvolvido no Reino Unido. Ferramentas simples que fazem bem um único trabalho e que dizem claramente o que fazem com os seus dados.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Software by Spencer Fields">
+<meta property="og:url" content="https://software.spencerfields.com/pt/index.html">
+<meta property="og:locale" content="pt">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Spencer Fields",
+  "url": "https://software.spencerfields.com/",
+  "email": "Apps@spencerfields.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Lytchett House, 13 Freeland Park, Wareham Road, Lytchett Matravers",
+    "addressLocality": "Poole",
+    "postalCode": "BH16 6FA",
+    "addressCountry": "GB"
+  }
+}
+</script>
+
+<style>
+  /* Light by default, dark when the reader asks for it. Every colour is a token
+     so the two schemes cannot drift apart. */
+  :root {
+    --ground: #f7f5f1;
+    --raised: #ffffff;
+    --ink:    #16212a;
+    --body:   #3d4a54;
+    --muted:  #6c7a85;
+    --line:   #e0dad0;
+    --accent: #1b5b53;
+    --gold:   #b07a2e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #131c22;
+      --raised: #1b2730;
+      --ink:    #f0ece4;
+      --body:   #c5ccd2;
+      --muted:  #8fa0ab;
+      --line:   #2a3841;
+      --accent: #7fc9bd;
+      --gold:   #dda758;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 2rem) 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.25rem, 5vw, 3.25rem);
+  }
+  /* Running text keeps its own measure. Learned from the Wren site, where the
+     text was capped far narrower than everything around it and read as a fault. */
+  .prose > p { max-width: 44rem; }
+
+  .topbar {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid var(--line); padding-bottom: 1rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: .6rem;
+    font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.05rem;
+  }
+  .brand svg { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .topbar nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; }
+  .topbar nav a { color: var(--muted); text-decoration: none; font-size: .93rem; }
+  .topbar nav a:hover { color: var(--accent); }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", serif; font-weight: 400;
+    font-size: clamp(2rem, 6.5vw, 3rem); line-height: 1.08;
+    letter-spacing: -0.02em; margin: 0; color: var(--ink); text-wrap: balance;
+  }
+  h2 {
+    font-family: Georgia, "Iowan Old Style", serif; font-weight: 400;
+    font-size: clamp(1.35rem, 4vw, 1.75rem); line-height: 1.2;
+    margin: 0 0 .35rem; color: var(--ink); text-wrap: balance;
+  }
+  .tagline {
+    font-family: Georgia, "Iowan Old Style", serif; font-style: italic;
+    font-size: clamp(1.1rem, 3.2vw, 1.35rem); color: var(--gold); margin: 0;
+  }
+  .lede { font-size: 1.08rem; max-width: 44rem; margin: 0; }
+  .prose { display: flex; flex-direction: column; gap: 1.1rem; }
+  section > p { margin: 0 0 .9rem; }
+  section > p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 650; color: var(--ink); }
+
+  /* ── the software ─────────────────────────────────────────────── */
+  .apps { display: grid; gap: 1rem; grid-template-columns: 1fr; list-style: none; margin: 0; padding: 0; }
+  @media (min-width: 52rem) { .apps { grid-template-columns: repeat(3, 1fr); } }
+  .app {
+    background: var(--raised); border: 1px solid var(--line); border-radius: 8px;
+    padding: 1.25rem 1.35rem; display: flex; flex-direction: column; gap: .5rem;
+  }
+  .app h3 { margin: 0; font-size: 1.05rem; color: var(--ink); font-weight: 650; }
+  .app p { margin: 0; font-size: .95rem; color: var(--body); }
+  .app .platforms { font-size: .84rem; color: var(--muted); }
+  .app .more { margin-top: auto; padding-top: .5rem; font-size: .93rem; }
+  .status-tag {
+    align-self: flex-start; font-size: .72rem; letter-spacing: .08em;
+    text-transform: uppercase; font-weight: 700; border-radius: 99px;
+    padding: .15rem .6rem; border: 1px solid currentColor;
+  }
+  .live { color: var(--accent); }
+  .soon { color: var(--gold); }
+
+  .callout {
+    border-left: 3px solid var(--gold); background: var(--raised);
+    border-radius: 0 6px 6px 0; padding: 1.1rem 1.35rem;
+  }
+  .callout p { margin: 0; }
+  .callout p + p { margin-top: .6rem; color: var(--muted); font-size: .94rem; }
+
+  dl.facts { margin: 0; display: grid; gap: .5rem 1.25rem; grid-template-columns: 1fr; }
+  @media (min-width: 40rem) { dl.facts { grid-template-columns: 12rem 1fr; } }
+  dl.facts dt { color: var(--muted); font-size: .9rem; }
+  dl.facts dd { margin: 0; color: var(--body); }
+
+  /* ── contact form ─────────────────────────────────────────────── */
+  form { max-width: 34rem; }
+  .field { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1rem; }
+  .field label { font-size: .88rem; color: var(--muted); }
+  input, select, textarea {
+    font: inherit; font-size: .96rem; color: var(--ink); background: var(--raised);
+    border: 1px solid var(--line); border-radius: 5px; padding: .6rem .7rem; width: 100%;
+  }
+  textarea { min-height: 8rem; resize: vertical; }
+  .btn {
+    font: inherit; font-weight: 650; font-size: .95rem;
+    color: var(--raised); background: var(--accent);
+    border: 0; border-radius: 5px; padding: .65rem 1.2rem; cursor: pointer;
+  }
+  .btn:hover { background: var(--gold); }
+  .form-note { color: var(--muted); font-size: .86rem; margin: .7rem 0 0; }
+  /* Honeypot: reachable by a bot filling every field, by nobody else. */
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  footer {
+    border-top: 1px solid var(--line); padding-top: 1.25rem;
+    display: flex; flex-wrap: wrap; gap: .4rem 1.25rem;
+    color: var(--muted); font-size: .88rem;
+  }
+</style>
+<link rel="canonical" href="https://software.spencerfields.com/pt/index.html"><!-- i18n:begin --><link rel="alternate" hreflang="x-default" href="https://software.spencerfields.com/index.html"><link rel="alternate" hreflang="en" href="https://software.spencerfields.com/index.html"><link rel="alternate" hreflang="zh" href="https://software.spencerfields.com/zh/index.html"><link rel="alternate" hreflang="hi" href="https://software.spencerfields.com/hi/index.html"><link rel="alternate" hreflang="es" href="https://software.spencerfields.com/es/index.html"><link rel="alternate" hreflang="ar" href="https://software.spencerfields.com/ar/index.html"><link rel="alternate" hreflang="fr" href="https://software.spencerfields.com/fr/index.html"><link rel="alternate" hreflang="bn" href="https://software.spencerfields.com/bn/index.html"><link rel="alternate" hreflang="pt" href="https://software.spencerfields.com/pt/index.html"><link rel="alternate" hreflang="id" href="https://software.spencerfields.com/id/index.html"><link rel="alternate" hreflang="ur" href="https://software.spencerfields.com/ur/index.html"><link rel="alternate" hreflang="ru" href="https://software.spencerfields.com/ru/index.html"><link rel="alternate" hreflang="de" href="https://software.spencerfields.com/de/index.html"><link rel="alternate" hreflang="ja" href="https://software.spencerfields.com/ja/index.html"><link rel="alternate" hreflang="mr" href="https://software.spencerfields.com/mr/index.html"><link rel="alternate" hreflang="te" href="https://software.spencerfields.com/te/index.html"><!-- i18n:end --></head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="/">
+      <svg viewbox="0 0 100 100" role="img" aria-label="Spencer Fields">
+        <rect width="100" height="100" rx="22" fill="#1b2a33"></rect>
+        <path d="M26 68V32h13c11 0 18 7 18 18s-7 18-18 18z" fill="#e8dcc8"></path>
+        <circle cx="72" cy="62" r="7" fill="#c98a3f"></circle>
+      </svg>
+      Spencer Fields
+    </a>
+    <nav><a href="#software">Software</a>
+      <a href="#approach">Abordagem</a>
+      <a href="#business">Negócio</a>
+      <a href="#contact">Contacto</a></nav>
+  </div>
+
+  <!-- i18n:begin --><details class="i18n-picker"><summary><span aria-hidden="true">🌐</span> Português</summary><ul><li><a href="../index.html" lang="en" hreflang="en">English</a></li><li><a href="../zh/index.html" lang="zh" hreflang="zh">简体中文</a></li><li><a href="../hi/index.html" lang="hi" hreflang="hi">हिन्दी</a></li><li><a href="../es/index.html" lang="es" hreflang="es">Español</a></li><li><a href="../ar/index.html" lang="ar" hreflang="ar">العربية</a></li><li><a href="../fr/index.html" lang="fr" hreflang="fr">Français</a></li><li><a href="../bn/index.html" lang="bn" hreflang="bn">বাংলা</a></li><li><span aria-current="true" class="i18n-current">Português</span></li><li><a href="../id/index.html" lang="id" hreflang="id">Bahasa Indonesia</a></li><li><a href="../ur/index.html" lang="ur" hreflang="ur">اردو</a></li><li><a href="../ru/index.html" lang="ru" hreflang="ru">Русский</a></li><li><a href="../de/index.html" lang="de" hreflang="de">Deutsch</a></li><li><a href="../ja/index.html" lang="ja" hreflang="ja">日本語</a></li><li><a href="../mr/index.html" lang="mr" hreflang="mr">मराठी</a></li><li><a href="../te/index.html" lang="te" hreflang="te">తెలుగు</a></li></ul></details><style>.i18n-picker{margin:.75rem 0 1.25rem;font-size:.9rem;border:1px solid currentColor;border-radius:6px;padding:.4rem .7rem;display:inline-block;opacity:.75}.i18n-picker[open]{display:block}.i18n-picker:hover{opacity:1}.i18n-picker summary{cursor:pointer;list-style:none}.i18n-picker summary::-webkit-details-marker{display:none}.i18n-picker summary::after{content:' \25BE'}.i18n-picker[open] summary::after{content:' \25B4'}.i18n-picker ul{list-style:none;padding:.75rem 0 .15rem;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:.4rem .9rem}.i18n-picker li{margin:0}.i18n-picker a{text-decoration:none}.i18n-picker a:hover{text-decoration:underline}.i18n-current{font-weight:700}</style><!-- i18n:end --><header class="prose">
+    <h1>Software da Spencer Fields</h1>
+    <p class="tagline">Ferramentas simples que fazem bem um único trabalho.</p>
+    <p class="lede">Software independente, concebido e desenvolvido no Reino Unido. Cada um começou como uma tarefa que as ferramentas existentes tornavam mais difícil do que devia ser, e cada um é publicado sob o seu próprio nome, com os seus próprios termos, preços e política de privacidade.</p>
+  </header>
+
+  <section class="prose" id="software">
+    <h2>O software</h2>
+    <p>Três aplicações, para computador e telemóvel. Cada uma tem o seu próprio site com os detalhes, os preços e a letra pequena.</p>
+
+    <ul class="apps">
+      <li class="app">
+        <span class="status-tag live">Disponível</span>
+        <h3>Easy-Post Desktop</h3>
+        <p>Compare tarifas de transportadoras em tempo real, compre e imprima etiquetas de envio e acompanhe encomendas — a partir de uma verdadeira aplicação de computador que utiliza a sua própria conta EasyPost, em vez de código ou de um painel no browser.</p>
+        <p class="platforms">Windows e macOS · também na Microsoft Store</p>
+        <p class="more"><a href="https://easy-post.spencerfields.com">easy-post.spencerfields.com</a></p>
+      </li>
+
+      <li class="app">
+        <span class="status-tag live">Android já disponível</span>
+        <h3>Complemento Móvel do Easy-Post</h3>
+        <p>Acompanhamento de encomendas no telemóvel, associado ao Easy-Post Desktop. Disponível para Android como descarregamento direto assinado, enquanto a sua ficha na Google Play é preparada; a edição para iPhone está a caminho da App Store.</p>
+        <p class="platforms">Android e iOS</p>
+        <p class="more"><a href="https://easy-post.spencerfields.com/mobile.html">easy-post.spencerfields.com/mobile</a></p>
+      </li>
+
+      <li class="app">
+        <span class="status-tag soon">Em análise</span>
+        <h3>Wren</h3>
+        <p>Transforma os locais recomendados por outras pessoas num Guia no Apple Maps — lidos numa captura de ecrã, importados de um ficheiro, ou adicionados a um Guia que já mantém. Submetido à App Store e a aguardar análise.</p>
+        <p class="platforms">iPhone, iOS 18 ou posterior · 47 idiomas</p>
+        <p class="more"><a href="https://wren.spencerfields.com">wren.spencerfields.com</a></p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="prose" id="approach">
+    <h2>Como são construídas</h2>
+    <p>As três aplicações têm pouco em comum como produtos, mas são construídas segundo as mesmas poucas regras.</p>
+    <p><strong>Os seus dados permanecem seus.</strong> O Easy-Post Desktop guarda os seus dados no seu próprio computador e funciona com a sua própria conta EasyPost; não tem análises nem telemetria. O Wren não tem conta nem início de sessão, lê as suas capturas de ecrã no dispositivo e nunca as envia. Cada aplicação publica uma política de privacidade que indica claramente o que sai do seu dispositivo, e porquê.</p>
+    <p><strong>Nativa, não um navegador disfarçado.</strong> O Easy-Post Desktop é uma verdadeira aplicação de ambiente de trabalho para Windows e macOS. O Wren é uma verdadeira aplicação para iPhone. Ambas são construídas para a plataforma em que funcionam.</p>
+    <p><strong>Dito com clareza.</strong> Os sítios web explicam tão prontamente o que cada aplicação não consegue fazer como o que consegue — onde uma plataforma se atravessa, onde uma limitação é real, e o que ainda depende de terceiros. O código-fonte do Wren está publicado no GitHub.</p>
+    <p><strong>Falada em muitos idiomas.</strong> O Wren está traduzido em 47 idiomas, e ambos os sítios dos produtos estão publicados nos quinze idiomas mais falados do mundo.</p>
+  </section>
+
+  <section class="prose" id="business">
+    <h2>A empresa</h2>
+    <div class="callout">
+      <p>A Spencer Fields é uma empresa em nome individual estabelecida no Reino Unido, que exerce a sua atividade em nome próprio. As compras são geridas pela loja ou pelo comerciante de registo de cada edição — a Microsoft, no caso da edição da Microsoft Store do Easy‑Post Desktop, a Paddle, no caso da transferência direta, e a Apple, no caso de qualquer compra feita através da App Store — pelo que os dados de pagamento nunca são vistos por esta empresa.</p>
+    </div>
+    <dl class="facts">
+      <dt>Nome comercial</dt>
+      <dd>Spencer Fields</dd>
+      <dt>Estrutura</dt>
+      <dd>Empresa em nome individual estabelecida no Reino Unido</dd>
+      <dt>Morada registada</dt>
+      <dd>Lytchett House, 13 Freeland Park, Wareham Road, Lytchett Matravers, Poole, BH16 6FA, United Kingdom</dd>
+      <dt>Proteção de dados</dt>
+      <dd>Registada junto do UK Information Commissioner's Office como responsável pelo tratamento de dados</dd>
+      <dt>Contacto</dt>
+      <dd><a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></dd>
+    </dl>
+  </section>
+
+  <section class="prose" id="contact">
+    <h2>Entre em contacto</h2>
+    <p>Escreva em qualquer idioma — as mensagens são traduzidas à chegada, e a resposta é enviada no idioma em que escreveu. As respostas são enviadas pela Spencer Fields, normalmente dentro de um dia útil.</p>
+    <p>Um problema com uma das aplicações é melhor comunicado através da página de suporte dessa própria aplicação, onde chega com o contexto necessário para lhe dar resposta.</p>
+
+    <form method="post" action="../contact.php" id="contact-form" novalidate>
+      <div class="field"><label for="cf-name">O seu nome</label>
+        <input type="text" id="cf-name" name="name" maxlength="100" required autocomplete="name"></div>
+      <div class="field"><label for="cf-email">O seu email</label>
+        <input type="email" id="cf-email" name="email" maxlength="150" required autocomplete="email"></div>
+      <div class="field">
+        <label for="cf-topic">Sobre o que se trata?</label>
+        <select id="cf-topic" name="topic">
+          <option>Uma pergunta sobre o software</option>
+          <option>Licenciamento ou negócios</option>
+          <option>Imprensa ou parceria</option>
+          <option>Outro assunto</option>
+        </select>
+      </div>
+      <div class="field"><label for="cf-message">Mensagem</label>
+        <textarea id="cf-message" name="message" maxlength="4000" required></textarea></div>
+
+      <!-- Present for bots, invisible and unreachable for people. -->
+      <div class="hp" aria-hidden="true"><label for="cf-website">Deixe este campo vazio</label>
+        <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <!-- Stamped by script on load. A post carrying no stamp never rendered
+           the page, and one sent within a few seconds was not typed by a person. -->
+      <input type="hidden" name="ts" id="cf-ts" value="">
+
+      <button class="btn" type="submit">Enviar</button>
+      <p class="form-note">O seu endereço é utilizado apenas para lhe responder.</p>
+      <noscript>
+        <p class="form-note">Este formulário precisa de JavaScript. Sem ele, escreva para <strong>Apps [at] spencerfields [dot] com</strong>.</p>
+      </noscript>
+    </form>
+
+    <p class="form-note">Prefere não usar um formulário? <a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></p>
+  </section>
+
+  <script>
+    // Timestamp the form so the server can reject a submission filled in faster
+    // than a person could type, and one that never loaded the page at all.
+    document.getElementById('cf-ts').value = Date.now();
+  </script>
+
+  <section class="prose">
+    <h2>O que vem a seguir</h2>
+    <p>Novos programas são adicionados aqui à medida que são lançados. Se algo estiver listado acima como em revisão ou em preparação, é nesta página que o seu estado muda primeiro.</p>
+  </section>
+
+  <footer><span>Spencer Fields — empresário em nome individual estabelecido no Reino Unido</span>
+    <span><a href="https://easy-post.spencerfields.com">Easy-Post</a></span>
+    <span><a href="https://wren.spencerfields.com">Wren</a></span>
+    <span><a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></span></footer>
+
+</div>
+</body>
+</html>
