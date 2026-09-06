@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software von Spencer Fields</title>
-<meta name="description" content="Unabhängige Software, entwickelt im Vereinigten Königreich: Easy-Post Desktop für den Versand mit EasyPost, die passende mobile Begleit-App und Wren für Apple Maps. Kleine Werkzeuge, die eine Aufgabe richtig erledigen.">
+<meta name="description" content="Unabhängige Software, entwickelt im Vereinigten Königreich: Easy-Post Desktop für den Versand mit EasyPost, dessen mobiler Begleiter, Wren für Apple Maps und Dawnlist für die Jobsuche. Kleine Werkzeuge, die eine Aufgabe richtig erledigen.">
 <meta name="theme-color" content="#16212A">
 <meta property="og:image" content="https://software.spencerfields.com/mark-tile-1024.png">
 
@@ -123,7 +123,7 @@
 
   /* ── the software ─────────────────────────────────────────────── */
   .apps { display: grid; gap: 1rem; grid-template-columns: 1fr; list-style: none; margin: 0; padding: 0; }
-  @media (min-width: 52rem) { .apps { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 52rem) { .apps { grid-template-columns: repeat(2, 1fr); } }
   .app {
     background: var(--raised); border: 1px solid var(--line); border-radius: 8px;
     padding: 1.25rem 1.35rem; display: flex; flex-direction: column; gap: .5rem;
@@ -169,7 +169,12 @@
   .btn:hover { background: var(--gold); }
   .form-note { color: var(--muted); font-size: .86rem; margin: .7rem 0 0; }
   /* Honeypot: reachable by a bot filling every field, by nobody else. */
-  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  /* Honeypot. Clipped rather than pushed off-screen: `left: -9999px`
+     overflows an RTL document to the right, which made the Arabic and
+     Urdu pages scroll ten thousand pixels sideways. Clipping hides it
+     from people just as well and takes up no space in either direction. */
+  .hp { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap; }
 
   footer {
     border-top: 1px solid var(--line); padding-top: 1.25rem;
@@ -204,7 +209,7 @@
 
   <section class="prose" id="software">
     <h2>Die Software</h2>
-    <p>Drei Anwendungen, für Desktop und Mobilgeräte. Jede hat ihre eigene Website mit allen Einzelheiten, den Preisen und dem Kleingedruckten.</p>
+    <p>Vier Anwendungen, für Desktop und Mobilgeräte. Jede hat ihre eigene Website mit allen Einzelheiten, den Preisen und dem Kleingedruckten.</p>
 
     <ul class="apps">
       <li class="app">
@@ -230,16 +235,24 @@
         <p class="platforms">iPhone, iOS 18 oder neuer · 47 Sprachen</p>
         <p class="more"><a href="https://wren.spencerfields.com">wren.spencerfields.com</a></p>
       </li>
+
+      <li class="app">
+        <span class="status-tag soon">In Entwicklung</span>
+        <h3>Dawnlist</h3>
+        <p>Liest jeden Morgen die Stellenanzeigen der Welt, bewertet jede Anzeige anhand eines in einem Interview erstellten Anforderungsprofils und liefert eine geordnete Auswahlliste zurück, in der auch die Absagen aufgeführt sind. Es wird nie etwas versendet — jede Rückmeldung ist ein Entwurf, der von Hand abgeschickt werden muss. Noch nicht verfügbar.</p>
+        <p class="platforms">macOS und Windows · in Entwicklung</p>
+        <p class="more"><a href="https://dawnlist.spencerfields.com">dawnlist.spencerfields.com</a></p>
+      </li>
     </ul>
   </section>
 
   <section class="prose" id="approach">
     <h2>Wie diese entstehen</h2>
-    <p>Die drei Anwendungen haben als Produkte wenig gemeinsam, doch sie folgen denselben wenigen Regeln.</p>
+    <p>Die vier Anwendungen haben als Produkte wenig gemeinsam, sind aber nach denselben wenigen Grundsätzen gebaut.</p>
     <p><strong>Ihre Daten bleiben Ihre.</strong> Easy-Post Desktop speichert seine Daten auf Ihrem eigenen Rechner und arbeitet mit Ihrem eigenen EasyPost-Konto; es gibt keine Analyse und keine Telemetrie. Wren hat kein Konto und keine Anmeldung, liest Ihre Screenshots auf dem Gerät und lädt sie nie hoch. Jede Anwendung veröffentlicht eine Datenschutzerklärung, die klar sagt, was Ihr Gerät verlässt und warum.</p>
     <p><strong>Nativ, kein verkleideter Browser.</strong> Easy-Post Desktop ist eine echte Desktop-Anwendung für Windows und macOS. Wren ist eine echte iPhone-Anwendung. Beide sind für die Plattform gebaut, auf der sie laufen.</p>
     <p><strong>Klar gesagt.</strong> Die Websites erklären ebenso bereitwillig, was jede Anwendung nicht kann, wie das, was sie kann — wo eine Plattform im Weg steht, wo eine Grenze echt ist und worauf noch jemand anderes wartet. Der Quellcode von Wren ist auf GitHub veröffentlicht.</p>
-    <p><strong>Weit gesprochen.</strong> Wren ist in 47 Sprachen übersetzt, und beide Produktwebsites sind in den fünfzehn meistgesprochenen Sprachen der Welt veröffentlicht.</p>
+    <p><strong>Weit verbreitet.</strong> Wren ist in 47 Sprachen übersetzt, und die Websites von Easy-Post und Wren sind in den fünfzehn meistgesprochenen Sprachen der Welt veröffentlicht.</p>
   </section>
 
   <section class="prose" id="business">
@@ -314,9 +327,10 @@
     <p>Neue Software wird hier ergänzt, sobald sie veröffentlicht wird. Wenn oben etwas als in Prüfung oder in Vorbereitung aufgeführt ist, ändert sich der Status zuerst auf dieser Seite.</p>
   </section>
 
-  <footer><span>Spencer Fields — ein Einzelunternehmen mit Sitz im Vereinigten Königreich</span>
+  <footer><span>Spencer Fields — ein im Vereinigten Königreich eingetragenes Einzelunternehmen</span>
     <span><a href="https://easy-post.spencerfields.com">Easy-Post</a></span>
     <span><a href="https://wren.spencerfields.com">Wren</a></span>
+    <span><a href="https://dawnlist.spencerfields.com">Dawnlist</a></span>
     <span><a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></span></footer>
 
 </div>

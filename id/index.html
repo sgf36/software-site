@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Perangkat Lunak oleh Spencer Fields</title>
-<meta name="description" content="Perangkat lunak independen yang dibuat di Inggris Raya: Easy-Post Desktop untuk pengiriman EasyPost, aplikasi pendampingnya di ponsel, dan Wren untuk Apple Maps. Alat-alat kecil yang menjalankan satu tugas dengan baik.">
+<meta name="description" content="Perangkat lunak independen yang dibangun di Inggris Raya: Easy-Post Desktop untuk pengiriman EasyPost, aplikasi pendampingnya untuk perangkat seluler, Wren untuk Apple Maps, dan Dawnlist untuk pencarian kerja. Alat-alat kecil yang mengerjakan satu tugas dengan benar.">
 <meta name="theme-color" content="#16212A">
 <meta property="og:image" content="https://software.spencerfields.com/mark-tile-1024.png">
 
@@ -123,7 +123,7 @@
 
   /* ── the software ─────────────────────────────────────────────── */
   .apps { display: grid; gap: 1rem; grid-template-columns: 1fr; list-style: none; margin: 0; padding: 0; }
-  @media (min-width: 52rem) { .apps { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 52rem) { .apps { grid-template-columns: repeat(2, 1fr); } }
   .app {
     background: var(--raised); border: 1px solid var(--line); border-radius: 8px;
     padding: 1.25rem 1.35rem; display: flex; flex-direction: column; gap: .5rem;
@@ -169,7 +169,12 @@
   .btn:hover { background: var(--gold); }
   .form-note { color: var(--muted); font-size: .86rem; margin: .7rem 0 0; }
   /* Honeypot: reachable by a bot filling every field, by nobody else. */
-  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  /* Honeypot. Clipped rather than pushed off-screen: `left: -9999px`
+     overflows an RTL document to the right, which made the Arabic and
+     Urdu pages scroll ten thousand pixels sideways. Clipping hides it
+     from people just as well and takes up no space in either direction. */
+  .hp { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap; }
 
   footer {
     border-top: 1px solid var(--line); padding-top: 1.25rem;
@@ -204,7 +209,7 @@
 
   <section class="prose" id="software">
     <h2>Perangkat lunak</h2>
-    <p>Tiga aplikasi, untuk desktop dan seluler. Masing-masing memiliki situsnya sendiri yang memuat rincian, harga, dan ketentuan lengkapnya.</p>
+    <p>Empat aplikasi, mencakup desktop dan seluler. Masing-masing memiliki situsnya sendiri dengan penjelasan rinci, harga, dan ketentuan lengkapnya.</p>
 
     <ul class="apps">
       <li class="app">
@@ -230,16 +235,24 @@
         <p class="platforms">iPhone, iOS 18 atau lebih baru · 47 bahasa</p>
         <p class="more"><a href="https://wren.spencerfields.com">wren.spencerfields.com</a></p>
       </li>
+
+      <li class="app">
+        <span class="status-tag soon">Dalam pengembangan</span>
+        <h3>Dawnlist</h3>
+        <p>Membaca feed lowongan kerja dari seluruh dunia setiap pagi, menilai setiap lowongan berdasarkan brief kecocokan yang dibuat dalam sebuah wawancara, dan menghasilkan daftar pendek berperingkat lengkap dengan penolakan yang ditampilkan. Aplikasi ini tidak pernah mengirim apa pun — setiap tindak lanjut berupa draf yang harus dikirim secara manual. Belum tersedia.</p>
+        <p class="platforms">macOS dan Windows · dalam pengembangan</p>
+        <p class="more"><a href="https://dawnlist.spencerfields.com">dawnlist.spencerfields.com</a></p>
+      </li>
     </ul>
   </section>
 
   <section class="prose" id="approach">
     <h2>Bagaimana aplikasi ini dibangun</h2>
-    <p>Ketiga aplikasi ini memiliki sedikit kesamaan sebagai produk, tetapi dibangun dengan beberapa aturan yang sama.</p>
+    <p>Keempat aplikasi ini memiliki sedikit kesamaan sebagai produk, tetapi dibangun mengikuti beberapa aturan yang sama.</p>
     <p><strong>Data Anda tetap milik Anda.</strong> Easy-Post Desktop menyimpan datanya di komputer Anda sendiri dan berjalan menggunakan akun EasyPost Anda sendiri; tidak ada analitik dan tidak ada telemetri. Wren tidak memiliki akun dan tidak memerlukan masuk, membaca tangkapan layar Anda langsung di perangkat, dan tidak pernah mengunggahnya. Setiap aplikasi menerbitkan kebijakan privasi yang menjelaskan dengan jelas apa yang keluar dari perangkat Anda, dan mengapa.</p>
     <p><strong>Aplikasi asli, bukan penjelmaan peramban.</strong> Easy-Post Desktop adalah aplikasi desktop sungguhan untuk Windows dan macOS. Wren adalah aplikasi iPhone sungguhan. Keduanya dibangun khusus untuk platform tempatnya berjalan.</p>
     <p><strong>Diungkapkan secara jelas.</strong> Situs web menjelaskan apa yang tidak dapat dilakukan setiap aplikasi sama jelasnya dengan apa yang dapat dilakukannya — di mana suatu platform menjadi penghalang, di mana suatu batasan memang nyata, dan apa yang masih menunggu pihak lain. Kode sumber Wren dipublikasikan di GitHub.</p>
-    <p><strong>Tersedia secara luas.</strong> Wren diterjemahkan ke dalam 47 bahasa, dan kedua situs produk diterbitkan dalam lima belas bahasa yang paling banyak digunakan di dunia.</p>
+    <p><strong>Digunakan secara luas.</strong> Wren diterjemahkan ke dalam 47 bahasa, dan situs Easy-Post serta Wren diterbitkan dalam lima belas bahasa yang paling banyak digunakan di dunia.</p>
   </section>
 
   <section class="prose" id="business">
@@ -317,6 +330,7 @@
   <footer><span>Spencer Fields — usaha perseorangan yang didirikan di Britania Raya</span>
     <span><a href="https://easy-post.spencerfields.com">Easy-Post</a></span>
     <span><a href="https://wren.spencerfields.com">Wren</a></span>
+    <span><a href="https://dawnlist.spencerfields.com">Dawnlist</a></span>
     <span><a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></span></footer>
 
 </div>

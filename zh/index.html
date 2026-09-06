@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spencer Fields 出品的软件</title>
-<meta name="description" content="在英国独立开发的软件：用于 EasyPost 运输的 Easy-Post Desktop、其移动版搭档应用，以及用于 Apple Maps 的 Wren。这些小工具专注把一件事做好。">
+<meta name="description" content="独立软件,在英国开发制作:面向 EasyPost 物流的 Easy-Post Desktop,及其移动版应用,面向 Apple Maps 的 Wren,以及面向求职的 Dawnlist。都是把一件事做好的小工具。">
 <meta name="theme-color" content="#16212A">
 <meta property="og:image" content="https://software.spencerfields.com/mark-tile-1024.png">
 
@@ -123,7 +123,7 @@
 
   /* ── the software ─────────────────────────────────────────────── */
   .apps { display: grid; gap: 1rem; grid-template-columns: 1fr; list-style: none; margin: 0; padding: 0; }
-  @media (min-width: 52rem) { .apps { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 52rem) { .apps { grid-template-columns: repeat(2, 1fr); } }
   .app {
     background: var(--raised); border: 1px solid var(--line); border-radius: 8px;
     padding: 1.25rem 1.35rem; display: flex; flex-direction: column; gap: .5rem;
@@ -169,7 +169,12 @@
   .btn:hover { background: var(--gold); }
   .form-note { color: var(--muted); font-size: .86rem; margin: .7rem 0 0; }
   /* Honeypot: reachable by a bot filling every field, by nobody else. */
-  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  /* Honeypot. Clipped rather than pushed off-screen: `left: -9999px`
+     overflows an RTL document to the right, which made the Arabic and
+     Urdu pages scroll ten thousand pixels sideways. Clipping hides it
+     from people just as well and takes up no space in either direction. */
+  .hp { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap; }
 
   footer {
     border-top: 1px solid var(--line); padding-top: 1.25rem;
@@ -204,7 +209,7 @@
 
   <section class="prose" id="software">
     <h2>软件</h2>
-    <p>三款应用，涵盖桌面端与移动端。每款都有自己的网站，包含详细信息、定价和细则说明。</p>
+    <p>四款应用,横跨桌面端与移动端。每款都有自己的官网,列有详情、价格与细则。</p>
 
     <ul class="apps">
       <li class="app">
@@ -230,16 +235,24 @@
         <p class="platforms">iPhone, iOS 18 或更高版本 · 支持 47 种语言</p>
         <p class="more"><a href="https://wren.spencerfields.com">wren.spencerfields.com</a></p>
       </li>
+
+      <li class="app">
+        <span class="status-tag soon">开发中</span>
+        <h3>Dawnlist</h3>
+        <p>每天早晨读取全球招聘信息,依据一份在访谈中建立的匹配简报逐一评判每条招聘,并给出一份排好序的候选清单,连同被淘汰的职位一并展示。它从不代为发送任何内容——每一份后续跟进都只是一份待您亲手发送的草稿。目前尚未上线。</p>
+        <p class="platforms">macOS 与 Windows · 开发中</p>
+        <p class="more"><a href="https://dawnlist.spencerfields.com">dawnlist.spencerfields.com</a></p>
+      </li>
     </ul>
   </section>
 
   <section class="prose" id="approach">
     <h2>这些是如何开发的</h2>
-    <p>这三款应用作为产品彼此差异很大，但都遵循同样几条准则来打造。</p>
+    <p>这四款应用作为产品彼此差异很大,但都遵循同样几条准则来打造。</p>
     <p><strong>您的数据始终归您所有。</strong>Easy-Post Desktop 将数据存储在您自己的电脑上,并直接对接您自己的 EasyPost 账户;它没有任何分析或遥测功能。Wren 没有账户、无需登录,只在设备本地读取您的截图,绝不上传。每款应用都发布了隐私政策,清楚说明有哪些内容会离开您的设备,以及原因。</p>
     <p><strong>原生开发,而非伪装的浏览器。</strong>Easy-Post Desktop 是一款面向 Windows 和 macOS 的真正桌面应用。Wren 是一款真正的 iPhone 应用。两者都是针对其运行平台专门打造的。</p>
     <p><strong>坦诚说明。</strong>各产品网站会同样清楚地说明每款应用做不到什么,而不只是能做什么——包括平台带来的限制、真实存在的局限,以及仍需其他人配合才能实现的部分。Wren 的源代码已发布在 GitHub 上。</p>
-    <p><strong>广泛支持多语言。</strong>Wren 已翻译成 47 种语言,两个产品网站也都提供了全球使用人数最多的十五种语言版本。</p>
+    <p><strong>广泛支持多语言。</strong>Wren 已被翻译成 47 种语言,Easy-Post 与 Wren 的官网也以全球使用人数最多的十五种语言发布。</p>
   </section>
 
   <section class="prose" id="business">
@@ -314,9 +327,10 @@
     <p>新软件发布后会在此处添加。如果上方列出的内容标注为“审核中”或“准备中”，本页面会最先反映其状态变化。</p>
   </section>
 
-  <footer><span>Spencer Fields — 一家在英国注册的个体经营企业</span>
+  <footer><span>Spencer Fields ——一家在英国成立的个体经营企业</span>
     <span><a href="https://easy-post.spencerfields.com">Easy-Post</a></span>
     <span><a href="https://wren.spencerfields.com">Wren</a></span>
+    <span><a href="https://dawnlist.spencerfields.com">Dawnlist</a></span>
     <span><a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></span></footer>
 
 </div>
