@@ -146,8 +146,9 @@ function render(string $heading, string $body, bool $ok): void
     <a class="brand" href="index.html">Spencer Fields</a>
     <nav>
       <a href="index.html#software">Software</a>
-      <a href="index.html#business">Business</a>
       <a href="index.html#contact">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </div>
   <section>
