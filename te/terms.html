@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>నిబంధనలు — Software by Spencer Fields</title>
+<meta name="description" content="software.spencerfields.com వినియోగ నిబంధనలు. ఈ సైట్ కేవలం సమాచార ప్రయోజనాల కోసం; ప్రతి అప్లికేషన్‌కు దాని స్వంత సైట్‌లో దాని స్వంత నిబంధనలు ఉంటాయి.">
+<meta name="theme-color" content="#16212A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%2316212A'/%3E%3Cpath%20d='M50.1%2032.9A10%2010%200%201%200%2043%2050A10%2010%200%201%201%2035.9%2067.1'%20fill='none'%20stroke='%23F0ECE4'%20stroke-width='11.5'%20stroke-linecap='round'/%3E%3Ccircle%20cx='67.5'%20cy='69.5'%20r='6'%20fill='%23C98A3F'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --ground: #f7f5f1;
+    --raised: #ffffff;
+    --ink:    #16212a;
+    --body:   #3d4a54;
+    --muted:  #6c7a85;
+    --line:   #e0dad0;
+    --accent: #1b5b53;
+    --gold:   #b07a2e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #131c22;
+      --raised: #1b2730;
+      --ink:    #f0ece4;
+      --body:   #c5ccd2;
+      --muted:  #8fa0ab;
+      --line:   #2a3841;
+      --accent: #7fc9bd;
+      --gold:   #dda758;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 2rem) 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.25rem, 5vw, 3.25rem);
+  }
+  .prose > p { max-width: 44rem; }
+  .topbar {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid var(--line); padding-bottom: 1rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: .6rem;
+    font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.05rem;
+  }
+  .brand svg { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .topbar nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; }
+  .topbar nav a { color: var(--muted); text-decoration: none; font-size: .93rem; }
+  .topbar nav a:hover { color: var(--accent); }
+  .topbar nav a[aria-current] { color: var(--ink); }
+  h1 {
+    font-family: Georgia, "Iowan Old Style", serif; font-weight: 400;
+    font-size: clamp(2rem, 6.5vw, 3rem); line-height: 1.08;
+    letter-spacing: -0.02em; margin: 0; color: var(--ink); text-wrap: balance;
+  }
+  h2 {
+    font-family: Georgia, "Iowan Old Style", serif; font-weight: 400;
+    font-size: clamp(1.35rem, 4vw, 1.75rem); line-height: 1.2;
+    margin: 0 0 .35rem; color: var(--ink); text-wrap: balance;
+  }
+  .updated { font-size: .9rem; color: var(--muted); margin: .25rem 0 0; }
+  .prose { display: flex; flex-direction: column; gap: 1.1rem; }
+  section > p { margin: 0 0 .9rem; }
+  section > p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 650; color: var(--ink); }
+  footer {
+    border-top: 1px solid var(--line); padding-top: 1.25rem;
+    display: flex; flex-wrap: wrap; gap: .4rem 1.25rem;
+    color: var(--muted); font-size: .88rem;
+  }
+</style>
+<link rel="canonical" href="https://software.spencerfields.com/te/terms.html"><!-- i18n:begin --><!-- i18n:end --></head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <svg viewbox="0 0 100 100" role="img" aria-label="Spencer Fields">
+        <rect width="100" height="100" rx="22" fill="#16212A"></rect>
+        <path d="M50.1 32.9A10 10 0 1 0 43 50A10 10 0 1 1 35.9 67.1" fill="none" stroke="#F0ECE4" stroke-width="11.5" stroke-linecap="round"></path>
+        <circle cx="67.5" cy="69.5" r="6" fill="#C98A3F"></circle>
+      </svg>
+      Spencer Fields
+    </a>
+    <nav>
+      <a href="index.html#software">సాఫ్ట్‌వేర్</a>
+      <a href="index.html#contact">సంప్రదించండి</a>
+      <a href="privacy.html">గోప్యతా విధానం</a>
+      <a href="terms.html" aria-current="page">నిబంధనలు</a>
+    </nav>
+  </div>
+
+  <!-- i18n:begin --><!-- i18n:end --><header class="prose">
+    <h1>వినియోగ నిబంధనలు</h1>
+    <p class="updated">చివరిగా నవీకరించబడింది 30 సెప్టెంబర్ 2026</p>
+  </header>
+
+  <section class="prose">
+    <h2>ఇది దేనిని కవర్ చేస్తుంది</h2>
+    <p>ఈ నిబంధనలు software.spencerfields.com అనే ఈ వెబ్‌సైట్ వినియోగానికి వర్తిస్తాయి. సైట్‌లో జాబితా చేయబడిన ప్రతి అప్లికేషన్‌కు దాని స్వంత సైట్‌లో ప్రచురించబడిన దాని స్వంత వినియోగ నిబంధనలు ఉంటాయి. ఆ అప్లికేషన్లలో దేనినైనా కొనుగోలు చేయడం, ఇన్‌స్టాల్ చేయడం లేదా ఉపయోగించడం వాటి స్వంత నిబంధనలచే నియంత్రించబడుతుంది, ఈ నిబంధనలచే కాదు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>ఈ సైట్‌ను ఎవరు ప్రచురిస్తారు</h2>
+    <p>ఈ సైట్‌ను Spencer Fields ప్రచురిస్తారు, ఇది యునైటెడ్ కింగ్‌డమ్‌లో స్థాపించబడిన ఏకైక వ్యాపారి, చిరునామా: Lytchett House, 13 Freeland Park, Wareham Road, Lytchett Matravers, Poole, BH16 6FA.</p>
+  </section>
+
+  <section class="prose">
+    <h2>ఈ సైట్ దేని కోసం</h2>
+    <p>ఈ సైట్ Spencer Fields ప్రచురించిన సాఫ్ట్‌వేర్‌ను వివరిస్తుంది. ఇది కేవలం సమాచార ప్రయోజనాల కోసం మాత్రమే: ఇది దేనినీ విక్రయించదు, చెల్లింపులను ప్రాసెస్ చేయదు మరియు ఖాతాలను సృష్టించదు. కొనుగోళ్లు, సభ్యత్వాలు మరియు లైసెన్సులు వ్యక్తిగత ఉత్పత్తి సైట్‌లలో జాబితా చేయబడిన స్టోర్‌లు మరియు మర్చంట్ ఆఫ్ రికార్డ్‌ల ద్వారా నిర్వహించబడతాయి.</p>
+  </section>
+
+  <section class="prose">
+    <h2>సంప్రదింపు ఫారం</h2>
+    <p>సంప్రదింపు ఫారం ద్వారా పంపిన సందేశాలను Spencer Fields చదివి, సాధారణంగా ఒక వ్యాపార దినంలో సమాధానం ఇస్తారు. ఈ ఫారం విచారణల కోసం మాత్రమే; ఇది వాణిజ్య సంబంధాన్ని సృష్టించదు మరియు మిమ్మల్ని దేనికీ చందాదారుగా చేయదు. మీ పేరు మరియు ఇమెయిల్ చిరునామాను మీకు సమాధానం ఇవ్వడానికి మాత్రమే ఉపయోగిస్తారు మరియు వాటిని మరెవరితోనూ పంచుకోరు. ఏమి సేకరించబడుతుందో మరియు ఎలా అనే విషయాలను <a href="privacy.html">గోప్యతా విధానం</a>లో వివరించారు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>ఖచ్చితత్వం</h2>
+    <p>ఈ సైట్‌లోని సమాచారం వీలైనంత ఖచ్చితంగా ఉంచబడుతుంది. ఏదైనా వాస్తవం పాతదైతే లేదా ఏదైనా ప్రకటన తప్పుగా ఉంటే, <a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a>కు వ్రాయండి, దానిని సరిదిద్దుతారు. వివరించిన అప్లికేషన్ల ధరలు, లభ్యత మరియు ఫీచర్లు వాటి స్వంత సైట్‌లలో నిర్దేశించబడ్డాయి, మరియు అవి వర్తించేవి.</p>
+  </section>
+
+  <section class="prose">
+    <h2>మేధో సంపత్తి</h2>
+    <p>ఈ సైట్‌లోని వచనం, డిజైన్ మరియు గుర్తు Spencer Fields ఆస్తి. మీరు దీనికి లింక్ చేయడం స్వాగతం. మీరు దీని ముఖ్యమైన భాగాలను పునరుత్పత్తి చేయకూడదు, లేదా ఉనికిలో లేని అనుబంధం లేదా ఆమోదాన్ని సూచించే విధంగా గుర్తును ఉపయోగించకూడదు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>హామీ లేదు</h2>
+    <p>ఈ సైట్ ఉన్నది ఉన్నట్లుగా అందించబడుతుంది. ఇది నిరంతరాయంగా, లోపరహితంగా లేదా ఎల్లప్పుడూ తాజాగా ఉంటుందని హామీ ఇవ్వబడదు. చట్టం అనుమతించే పూర్తి స్థాయి వరకు, అన్ని అంతర్గత హామీలు మినహాయించబడ్డాయి.</p>
+    <p>నిర్లక్ష్యం వల్ల కలిగే మరణం లేదా వ్యక్తిగత గాయానికి, మోసానికి, లేదా చట్టబద్ధంగా పరిమితం చేయలేని దేనికైనా బాధ్యతను ఇక్కడ ఏదీ పరిమితం చేయదు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>బాధ్యత</h2>
+    <p>పైన పేర్కొన్న పేరాకు లోబడి, ఈ సైట్ వినియోగం వల్ల కలిగే ఏ నష్టానికి Spencer Fields బాధ్యత వహించదు. ఈ సైట్ చదవడానికి ఉచితం మరియు సమాచారాన్ని వీలైనంత స్పష్టంగా ప్రదర్శించడం మించి ఎలాంటి వాగ్దానాలు చేయదు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>మార్పులు</h2>
+    <p>ఈ నిబంధనలు నవీకరించబడవచ్చు, మరియు అలా జరిగినప్పుడు పైన ఉన్న తేదీ మారుతుంది. మార్పు తర్వాత సైట్‌ను కొనసాగించి ఉపయోగించడం అంటే దానిని అంగీకరించడం అని అర్థం.</p>
+  </section>
+
+  <section class="prose">
+    <h2>చట్టం</h2>
+    <p>ఈ నిబంధనలు ఇంగ్లండ్ మరియు వేల్స్ చట్టం ద్వారా నియంత్రించబడతాయి, మరియు ఇంగ్లండ్ మరియు వేల్స్ న్యాయస్థానాలకు అధికార పరిధి ఉంటుంది. మీరు యునైటెడ్ కింగ్‌డమ్‌లోని మరెక్కడైనా లేదా యూరోపియన్ యూనియన్‌లో నివసించే వినియోగదారుడైతే, మీరు నివసించే ప్రాంతపు తప్పనిసరి వినియోగదారు చట్టం రక్షణను మీరు నిలుపుకుంటారు.</p>
+  </section>
+
+  <footer>
+    <span>Spencer Fields — యునైటెడ్ కింగ్‌డమ్‌లో స్థాపించబడిన ఏకైక వ్యాపారి</span>
+    <span><a href="https://easy-post.spencerfields.com">Easy-Post</a></span>
+    <span><a href="https://wren.spencerfields.com">Wren</a></span>
+    <span><a href="https://dawnlist.spencerfields.com">Dawnlist</a></span>
+    <span><a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></span>
+    <span>© 2026 Spencer Fields</span>
+  </footer>
+
+</div>
+</body>
+</html>
