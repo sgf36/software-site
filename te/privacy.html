@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>గోప్యత — Spencer Fields సాఫ్ట్‌వేర్</title>
+<meta name="description" content="software.spencerfields.com కోసం గోప్యతా విధానం. ఈ సైట్ ఎలాంటి థర్డ్-పార్టీ రిక్వెస్ట్‌లు చేయదు మరియు అనలిటిక్స్‌ను ఉపయోగించదు. మీకు సమాధానం ఇవ్వడానికి కాంటాక్ట్ ఫారమ్ మీ పేరు, ఇమెయిల్ మరియు సందేశాన్ని సేకరిస్తుంది.">
+<meta name="theme-color" content="#16212A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%2316212A'/%3E%3Cpath%20d='M50.1%2032.9A10%2010%200%201%200%2043%2050A10%2010%200%201%201%2035.9%2067.1'%20fill='none'%20stroke='%23F0ECE4'%20stroke-width='11.5'%20stroke-linecap='round'/%3E%3Ccircle%20cx='67.5'%20cy='69.5'%20r='6'%20fill='%23C98A3F'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --ground: #f7f5f1;
+    --raised: #ffffff;
+    --ink:    #16212a;
+    --body:   #3d4a54;
+    --muted:  #6c7a85;
+    --line:   #e0dad0;
+    --accent: #1b5b53;
+    --gold:   #b07a2e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #131c22;
+      --raised: #1b2730;
+      --ink:    #f0ece4;
+      --body:   #c5ccd2;
+      --muted:  #8fa0ab;
+      --line:   #2a3841;
+      --accent: #7fc9bd;
+      --gold:   #dda758;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 2rem) 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.25rem, 5vw, 3.25rem);
+  }
+  .prose > p { max-width: 44rem; }
+  .topbar {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid var(--line); padding-bottom: 1rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: .6rem;
+    font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.05rem;
+  }
+  .brand svg { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .topbar nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; }
+  .topbar nav a { color: var(--muted); text-decoration: none; font-size: .93rem; }
+  .topbar nav a:hover { color: var(--accent); }
+  .topbar nav a[aria-current] { color: var(--ink); }
+  h1 {
+    font-family: Georgia, "Iowan Old Style", serif; font-weight: 400;
+    font-size: clamp(2rem, 6.5vw, 3rem); line-height: 1.08;
+    letter-spacing: -0.02em; margin: 0; color: var(--ink); text-wrap: balance;
+  }
+  h2 {
+    font-family: Georgia, "Iowan Old Style", serif; font-weight: 400;
+    font-size: clamp(1.35rem, 4vw, 1.75rem); line-height: 1.2;
+    margin: 0 0 .35rem; color: var(--ink); text-wrap: balance;
+  }
+  .updated { font-size: .9rem; color: var(--muted); margin: .25rem 0 0; }
+  .prose { display: flex; flex-direction: column; gap: 1.1rem; }
+  section > p { margin: 0 0 .9rem; }
+  section > p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 650; color: var(--ink); }
+  footer {
+    border-top: 1px solid var(--line); padding-top: 1.25rem;
+    display: flex; flex-wrap: wrap; gap: .4rem 1.25rem;
+    color: var(--muted); font-size: .88rem;
+  }
+</style>
+<link rel="canonical" href="https://software.spencerfields.com/te/privacy.html"><!-- i18n:begin --><!-- i18n:end --></head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <svg viewbox="0 0 100 100" role="img" aria-label="Spencer Fields">
+        <rect width="100" height="100" rx="22" fill="#16212A"></rect>
+        <path d="M50.1 32.9A10 10 0 1 0 43 50A10 10 0 1 1 35.9 67.1" fill="none" stroke="#F0ECE4" stroke-width="11.5" stroke-linecap="round"></path>
+        <circle cx="67.5" cy="69.5" r="6" fill="#C98A3F"></circle>
+      </svg>
+      Spencer Fields
+    </a>
+    <nav>
+      <a href="index.html#software">సాఫ్ట్‌వేర్</a>
+      <a href="index.html#contact">సంప్రదించండి</a>
+      <a href="privacy.html" aria-current="page">గోప్యత</a>
+      <a href="terms.html">నిబంధనలు</a>
+    </nav>
+  </div>
+
+  <!-- i18n:begin --><!-- i18n:end --><header class="prose">
+    <h1>గోప్యత</h1>
+    <p class="updated">చివరిగా నవీకరించినది 30 సెప్టెంబర్ 2026</p>
+  </header>
+
+  <section class="prose">
+    <h2>ఇది దేనిని కవర్ చేస్తుంది</h2>
+    <p>ఈ విధానం software.spencerfields.com వెబ్‌సైట్‌ను కవర్ చేస్తుంది. సైట్‌లో జాబితా చేయబడిన ప్రతి అప్లికేషన్‌కు దాని స్వంత గోప్యతా విధానం ఉంది, ఇది దాని స్వంత సైట్‌లో ప్రచురించబడింది మరియు ఆ అప్లికేషన్ మీ డేటాతో ఏమి చేస్తుందో వివరిస్తుంది. ఈ పేజీ <em>ఈ వెబ్‌సైట్</em> ఏమి చేస్తుందో కవర్ చేస్తుంది.</p>
+  </section>
+
+  <section class="prose">
+    <h2>ఇది ఎవరు నిర్వహిస్తున్నారు</h2>
+    <p>ఈ సైట్‌ను యునైటెడ్ కింగ్‌డమ్‌లో స్థాపించబడిన ఏకైక వ్యాపారి Spencer Fields, చిరునామా Lytchett House, 13 Freeland Park, Wareham Road, Lytchett Matravers, Poole, BH16 6FA వద్ద ప్రచురిస్తున్నారు. ఈ విధానానికి సంబంధించిన ఏ విషయానికైనా <strong>Apps [at] spencerfields [dot] com</strong>కు రాయండి.</p>
+  </section>
+
+  <section class="prose">
+    <h2>అనలిటిక్స్ లేదు, కుకీలు లేవు, ట్రాకింగ్ లేదు</h2>
+    <p>ఈ వెబ్‌సైట్ ఎలాంటి అనలిటిక్స్ సేవను ఉపయోగించదు, కుకీలను సెట్ చేయదు మరియు ఎలాంటి థర్డ్-పార్టీ స్క్రిప్ట్‌లు, ఫాంట్‌లు లేదా చిత్రాలను లోడ్ చేయదు. ప్రతి పేజీ స్వతంత్రమైనది: దానిలో ఏదీ ఈ సర్వర్ మినహా మరెవరికీ రిక్వెస్ట్ చేయదు. ఇది ఉద్దేశపూర్వకంగా రూపొందించబడింది, మరియు దీనిలో ఏదైనా మార్పు జరిగితే ఇక్కడ పేర్కొనబడుతుంది.</p>
+  </section>
+
+  <section class="prose">
+    <h2>కాంటాక్ట్ ఫారమ్</h2>
+    <p>మీరు కాంటాక్ట్ ఫారమ్ ద్వారా సందేశం పంపితే, కింది వివరాలు సేకరించబడతాయి:</p>
+    <ul>
+      <li>మీ <strong>పేరు మరియు ఇమెయిల్ చిరునామా</strong>, తద్వారా సందేశానికి సమాధానం ఇవ్వవచ్చు.</li>
+      <li>మీరు ఎంచుకున్న <strong>విషయం</strong> మరియు మీరు రాసిన <strong>సందేశం</strong>.</li>
+      <li>మీ <strong>IP చిరునామా</strong>, ఇది కేవలం రేట్ లిమిటింగ్ కోసం ఉపయోగించబడుతుంది (ఫారమ్‌ను బల్క్ సందేశాలు పంపడానికి ఉపయోగించకుండా ఆపడానికి). ఇది తాత్కాలికంగా నిల్వ చేయబడి ఒక గంటలోపు తొలగించబడుతుంది.</li>
+    </ul>
+    <p>సందేశం Cloudflare Worker రిలే ద్వారా Apps@spencerfields.comకు డెలివరీ చేయబడుతుంది, ఫాల్‌బ్యాక్‌గా నేరుగా సర్వర్ పంపడంతో. సందేశాన్ని Spencer Fields చదివి మీకు సమాధానం ఇవ్వడానికి ఉపయోగిస్తారు. ఇది మరెవరితోనూ పంచుకోబడదు, మార్కెటింగ్ కోసం ఉపయోగించబడదు మరియు ఏ మెయిలింగ్ లిస్ట్‌కూ జోడించబడదు.</p>
+    <p>ఫారమ్ ఒక వ్యక్తి టైప్ చేసిన సందేశాన్ని బాట్ సమర్పించిన దాని నుండి వేరు చేయడానికి <strong>టైమ్‌స్టాంప్</strong> (పేజీ లోడ్ అయిన సమయం)ను కూడా సేకరిస్తుంది మరియు ఒక దాచిన ఫీల్డ్‌ను తనిఖీ చేస్తుంది. ఈ రెండూ వ్యక్తిగత డేటా కావు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>సర్వర్ యాక్సెస్ లాగ్‌లు</h2>
+    <p>హోస్టింగ్ ప్రొవైడర్ సాధారణ యాక్సెస్ లాగ్‌లను ఉంచుతారు, ఇవి ప్రతి సందర్శకుడి IP చిరునామా, బ్రౌజర్ గుర్తింపు మరియు అభ్యర్థించిన పేజీలను రికార్డ్ చేస్తాయి. ఇది ఏ వెబ్ సర్వర్‌కైనా సాధారణ విషయం మరియు ఈ వ్యాపారం దీన్ని చదవదు, విశ్లేషించదు లేదా హోస్టింగ్ ప్రొవైడర్ స్వంత నిల్వ వ్యవధి మించి ఉంచదు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>మీ హక్కులు</h2>
+    <p>UK GDPR మరియు EU GDPR ప్రకారం మీ గురించి ఉంచబడిన వ్యక్తిగత డేటాపై యాక్సెస్, సవరణ, తొలగింపు, పరిమితి, అభ్యంతరం మరియు పోర్టబిలిటీ హక్కులు మీకు ఉన్నాయి.</p>
+    <p>మీరు కాంటాక్ట్ ఫారమ్ ద్వారా ఎప్పుడూ సందేశం పంపకపోతే, ఈ సైట్ మీ గురించి ఏమీ కలిగి ఉండదు — యాక్సెస్ చేయడానికి, సవరించడానికి లేదా తొలగించడానికి ఏమీ ఉండదు. మీరు పంపి ఉంటే, పైన ఇచ్చిన చిరునామాకు రాయండి, మరియు మీ సందేశం తొలగించబడుతుంది లేదా దాని ప్రతి ఒక నెలలోపు మీకు పంపబడుతుంది.</p>
+    <p>మీరు యునైటెడ్ కింగ్‌డమ్‌లో ఉంటే, మీరు <a href="https://ico.org.uk/">Information Commissioner's Office</a>కు కూడా ఫిర్యాదు చేయవచ్చు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>డేటా రక్షణ నమోదు</h2>
+    <p>Spencer Fields UK Information Commissioner's Office వద్ద డేటా కంట్రోలర్‌గా నమోదు చేయబడింది.</p>
+  </section>
+
+  <section class="prose">
+    <h2>పిల్లలు</h2>
+    <p>ఈ వెబ్‌సైట్ పిల్లల కోసం ఉద్దేశించబడలేదు. కాంటాక్ట్ ఫారమ్ 13 సంవత్సరాల కంటే తక్కువ వయస్సు ఉన్న ఎవరి నుండైనా వ్యక్తిగత డేటాను తెలిసి సేకరించదు.</p>
+  </section>
+
+  <section class="prose">
+    <h2>మార్పులు</h2>
+    <p>ఈ విధానం మారితే, పైభాగంలోని తేదీ కూడా దానితోపాటు మారుతుంది. ముఖ్యమైన మార్పులు నిశ్శబ్దంగా చేయకుండా ఈ పేజీలో పేర్కొనబడతాయి.</p>
+  </section>
+
+  <footer>
+    <span>Spencer Fields — యునైటెడ్ కింగ్‌డమ్‌లో స్థాపించబడిన ఏకైక వ్యాపారి</span>
+    <span><a href="https://easy-post.spencerfields.com">Easy-Post</a></span>
+    <span><a href="https://wren.spencerfields.com">Wren</a></span>
+    <span><a href="https://dawnlist.spencerfields.com">Dawnlist</a></span>
+    <span><a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></span>
+    <span>© 2026 Spencer Fields</span>
+  </footer>
+
+</div>
+</body>
+</html>

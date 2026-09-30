@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidade — Software by Spencer Fields</title>
+<meta name="description" content="Política de privacidade do software.spencerfields.com. O site não faz pedidos a terceiros nem utiliza análise de dados. O formulário de contacto recolhe o seu nome, email e mensagem para lhe responder.">
+<meta name="theme-color" content="#16212A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%2316212A'/%3E%3Cpath%20d='M50.1%2032.9A10%2010%200%201%200%2043%2050A10%2010%200%201%201%2035.9%2067.1'%20fill='none'%20stroke='%23F0ECE4'%20stroke-width='11.5'%20stroke-linecap='round'/%3E%3Ccircle%20cx='67.5'%20cy='69.5'%20r='6'%20fill='%23C98A3F'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --ground: #f7f5f1;
+    --raised: #ffffff;
+    --ink:    #16212a;
+    --body:   #3d4a54;
+    --muted:  #6c7a85;
+    --line:   #e0dad0;
+    --accent: #1b5b53;
+    --gold:   #b07a2e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #131c22;
+      --raised: #1b2730;
+      --ink:    #f0ece4;
+      --body:   #c5ccd2;
+      --muted:  #8fa0ab;
+      --line:   #2a3841;
+      --accent: #7fc9bd;
+      --gold:   #dda758;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 2rem) 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.25rem, 5vw, 3.25rem);
+  }
+  .prose > p { max-width: 44rem; }
+  .topbar {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid var(--line); padding-bottom: 1rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: .6rem;
+    font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.05rem;
+  }
+  .brand svg { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .topbar nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; }
+  .topbar nav a { color: var(--muted); text-decoration: none; font-size: .93rem; }
+  .topbar nav a:hover { color: var(--accent); }
+  .topbar nav a[aria-current] { color: var(--ink); }
+  h1 {
+    font-family: Georgia, "Iowan Old Style", serif; font-weight: 400;
+    font-size: clamp(2rem, 6.5vw, 3rem); line-height: 1.08;
+    letter-spacing: -0.02em; margin: 0; color: var(--ink); text-wrap: balance;
+  }
+  h2 {
+    font-family: Georgia, "Iowan Old Style", serif; font-weight: 400;
+    font-size: clamp(1.35rem, 4vw, 1.75rem); line-height: 1.2;
+    margin: 0 0 .35rem; color: var(--ink); text-wrap: balance;
+  }
+  .updated { font-size: .9rem; color: var(--muted); margin: .25rem 0 0; }
+  .prose { display: flex; flex-direction: column; gap: 1.1rem; }
+  section > p { margin: 0 0 .9rem; }
+  section > p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 650; color: var(--ink); }
+  footer {
+    border-top: 1px solid var(--line); padding-top: 1.25rem;
+    display: flex; flex-wrap: wrap; gap: .4rem 1.25rem;
+    color: var(--muted); font-size: .88rem;
+  }
+</style>
+<link rel="canonical" href="https://software.spencerfields.com/pt/privacy.html"><!-- i18n:begin --><!-- i18n:end --></head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <svg viewbox="0 0 100 100" role="img" aria-label="Spencer Fields">
+        <rect width="100" height="100" rx="22" fill="#16212A"></rect>
+        <path d="M50.1 32.9A10 10 0 1 0 43 50A10 10 0 1 1 35.9 67.1" fill="none" stroke="#F0ECE4" stroke-width="11.5" stroke-linecap="round"></path>
+        <circle cx="67.5" cy="69.5" r="6" fill="#C98A3F"></circle>
+      </svg>
+      Spencer Fields
+    </a>
+    <nav>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#contact">Contacto</a>
+      <a href="privacy.html" aria-current="page">Privacidade</a>
+      <a href="terms.html">Termos</a>
+    </nav>
+  </div>
+
+  <!-- i18n:begin --><!-- i18n:end --><header class="prose">
+    <h1>Privacidade</h1>
+    <p class="updated">Última atualização a 30 de setembro de 2026</p>
+  </header>
+
+  <section class="prose">
+    <h2>O que esta política abrange</h2>
+    <p>Esta política abrange o website software.spencerfields.com. Cada aplicação listada no site tem a sua própria política de privacidade, publicada no seu próprio site, que descreve o que essa aplicação faz com os seus dados. Esta página descreve o que <em>este website</em> faz.</p>
+  </section>
+
+  <section class="prose">
+    <h2>Quem somos</h2>
+    <p>Este site é publicado por Spencer Fields, empresário em nome individual estabelecido no Reino Unido, com sede em Lytchett House, 13 Freeland Park, Wareham Road, Lytchett Matravers, Poole, BH16 6FA. Para qualquer questão relacionada com esta política, contacte <strong>Apps [at] spencerfields [dot] com</strong>.</p>
+  </section>
+
+  <section class="prose">
+    <h2>Sem análise de dados, sem cookies, sem rastreamento</h2>
+    <p>Este website não utiliza qualquer serviço de análise de dados, não define cookies e não carrega scripts, tipos de letra ou imagens de terceiros. Cada página é autónoma: nada nela faz pedidos a qualquer entidade que não este servidor. Isto é intencional, e qualquer alteração a esta prática será indicada aqui.</p>
+  </section>
+
+  <section class="prose">
+    <h2>O formulário de contacto</h2>
+    <p>Se enviar uma mensagem através do formulário de contacto, são recolhidos os seguintes dados:</p>
+    <ul>
+      <li>O seu <strong>nome e endereço de email</strong>, para que a mensagem possa ser respondida.</li>
+      <li>O <strong>assunto</strong> escolhido e a <strong>mensagem</strong> escrita.</li>
+      <li>O seu <strong>endereço IP</strong>, utilizado apenas para limitação de frequência (rate limiting), de forma a evitar que o formulário seja usado para enviar mensagens em massa. É armazenado temporariamente e eliminado no prazo de uma hora.</li>
+    </ul>
+    <p>A mensagem é entregue em Apps@spencerfields.com através de um relay Cloudflare Worker, com envio direto pelo servidor como alternativa de reserva. A mensagem é lida por Spencer Fields e utilizada apenas para lhe responder. Não é partilhada com terceiros, não é utilizada para fins de marketing e não é adicionada a qualquer lista de distribuição.</p>
+    <p>O formulário recolhe ainda uma <strong>marca temporal</strong> (referente ao momento em que a página foi carregada) e verifica um campo oculto, ambos com o objetivo de distinguir uma mensagem escrita por uma pessoa de uma submetida por um robô. Nenhum destes elementos constitui dados pessoais.</p>
+  </section>
+
+  <section class="prose">
+    <h2>Registos de acesso do servidor</h2>
+    <p>O fornecedor de alojamento mantém registos de acesso comuns, que registam o endereço IP, a identificação do navegador e as páginas requisitadas por cada visitante. Esta é uma prática padrão em qualquer servidor web e não é algo que esta empresa consulte, analise ou conserve para além do período de retenção próprio do fornecedor de alojamento.</p>
+  </section>
+
+  <section class="prose">
+    <h2>Os seus direitos</h2>
+    <p>Nos termos do RGPD do Reino Unido e do RGPD da UE, tem direitos de acesso, retificação, apagamento, limitação, oposição e portabilidade relativamente aos dados pessoais que lhe digam respeito.</p>
+    <p>Se nunca enviou uma mensagem através do formulário de contacto, este site não detém quaisquer dados sobre si — não há nada a aceder, corrigir ou apagar. Se enviou, escreva para o endereço indicado acima e a sua mensagem será eliminada, ou ser-lhe-á enviada uma cópia, no prazo de um mês.</p>
+    <p>Se residir no Reino Unido, pode também apresentar uma reclamação junto do <a href="https://ico.org.uk/">Information Commissioner's Office</a>.</p>
+  </section>
+
+  <section class="prose">
+    <h2>Registo de proteção de dados</h2>
+    <p>Spencer Fields está registado junto do Information Commissioner's Office do Reino Unido como responsável pelo tratamento de dados.</p>
+  </section>
+
+  <section class="prose">
+    <h2>Crianças</h2>
+    <p>Este website não se destina a crianças. O formulário de contacto não recolhe intencionalmente dados pessoais de pessoas com menos de 13 anos.</p>
+  </section>
+
+  <section class="prose">
+    <h2>Alterações</h2>
+    <p>Sempre que esta política for alterada, a data indicada no topo será atualizada em conformidade. As alterações substanciais serão assinaladas nesta página, e não introduzidas de forma silenciosa.</p>
+  </section>
+
+  <footer>
+    <span>Spencer Fields — empresário em nome individual estabelecido no Reino Unido</span>
+    <span><a href="https://easy-post.spencerfields.com">Easy-Post</a></span>
+    <span><a href="https://wren.spencerfields.com">Wren</a></span>
+    <span><a href="https://dawnlist.spencerfields.com">Dawnlist</a></span>
+    <span><a href="mailto:Apps@spencerfields.com">Apps@spencerfields.com</a></span>
+    <span>© 2026 Spencer Fields</span>
+  </footer>
+
+</div>
+</body>
+</html>
